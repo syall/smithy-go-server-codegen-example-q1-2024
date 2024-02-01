@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "sources": ["models"],
+  "maven": {
+    "dependencies": [
+      "software.amazon.smithy.go:smithy-go-codegen:0.1.0",
+      "software.amazon.smithy:smithy-aws-endpoints:1.42.0"
+    ]
+  },
+  "projections": {
+    "sqs-server": {
+      "plugins": {
+        "go-server-codegen": {
+          "service": "com.amazonaws.sqs#AmazonSQS",
+          "module": "github.com/aws/aws-sdk-go-v2/server/sqs",
+          "generateGoMod": true
+        }
+      }
+    }
+  }
+}
